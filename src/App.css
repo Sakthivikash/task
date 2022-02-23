@@ -61,10 +61,14 @@
 }
 .title{
   margin: 5px;
+  text-shadow: 2px 2px 5px white;
 }
 .addbtn{
   width: 500px;
 }
 .dltbtn{
+  text-align: center;
+}
+#name{
   text-align: center;
 }

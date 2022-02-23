@@ -4,16 +4,18 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from '@mui/material/Typography';
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { Switch, Route,  BrowserRouter as Router} from "react-router-dom";
+import { SongDetail } from "./SongDetail";
 
 
-export function Home({ name, image, movie, id, list, setlist }) {
+export function Home({ name, image, id, list, setlist }) {
   const history=useHistory();
-  console.log(history);
   return (
-    <div className="card" onClick={()=> history.push(`/song/${id}`)}>
+    <>
+    <div className="card" >
       <Card sx={{ maxWidth: 345 }}   >
         <CardMedia
-         
+          onClick={()=> history.push(`/song/${id}`)}
           component="img"
           className="img"
           height="250"
@@ -21,11 +23,8 @@ export function Home({ name, image, movie, id, list, setlist }) {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" id="name">
             {name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {movie}{id}
           </Typography>
           <div className="dltbtn">
           <Button 
@@ -43,6 +42,7 @@ export function Home({ name, image, movie, id, list, setlist }) {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
 
