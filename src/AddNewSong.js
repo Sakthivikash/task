@@ -46,7 +46,7 @@ export function AddNewSong({list, setlist}) {
           // setList([addmovie, ...list]);
           setlist([newSong, ...list]);
           
-        }}>Add the Movie</Button>
+        }}>Add</Button>
       </div>
      </div>
     {/* <Movieslist list={list}/> */}

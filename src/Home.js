@@ -8,11 +8,12 @@ import Button from "@mui/material/Button";
 
 export function Home({ name, image, movie, id, list, setlist }) {
   const history=useHistory();
+  console.log(history);
   return (
-    <div className="card">
-      <Card sx={{ maxWidth: 345 }}>
+    <div className="card" onClick={()=> history.push(`/song/${id}`)}>
+      <Card sx={{ maxWidth: 345 }}   >
         <CardMedia
-          onClick={()=> history.push(`/song/${id}`)}
+         
           component="img"
           className="img"
           height="250"

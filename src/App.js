@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import Typography from '@mui/material/Typography';
 import { useHistory } from "react-router-dom";
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route,  BrowserRouter as Router} from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useParams } from "react-router-dom";
 import { AddNewSong } from "./AddNewSong";
@@ -80,7 +80,7 @@ function App() {
           <Link id="homebtn" href="../../">Home</Link>
         </Toolbar>
       </AppBar>
-
+  
       <AddNewSong list={list} setlist={setlist} />
       
       <div className="box">
@@ -98,9 +98,12 @@ function App() {
           />  ))}
       </div>
     </div>
-    <Switch>
-      <Route path="/song/:id"><SongDetail /></Route>
-    </Switch>
+  <Router>  
+      <Switch>
+        <Route path="/song/:id"><SongDetail /></Route>
+      </Switch>
+  </Router>
+    
           
   </div>
   );
